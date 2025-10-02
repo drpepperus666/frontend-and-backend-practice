@@ -797,16 +797,27 @@ dialog {
     }
 
     /* ДОБАВЬТЕ ЭТО ДЛЯ ПРАКТИК */
-    .practices-flex {
-        flex-direction: column;
-        align-items: center;
+    .practices-grid {
+        grid-template-columns: 1fr;
         gap: 20px;
+        padding: 0 10px;
     }
     
     .practice-card {
         width: 100%;
-        max-width: 400px;
         margin: 0 auto;
+    }
+    
+    .practice-content {
+        padding: 15px;
+    }
+    
+    .practice-title {
+        font-size: 1.2rem;
+    }
+    
+    .practice-desc {
+        font-size: 0.95rem;
     }
 
     .profile-photo {
@@ -816,6 +827,7 @@ dialog {
 
     .page-title {
         font-size: 1.6rem;
+        padding: 0 15px;
     }
 
     .header {
@@ -830,5 +842,30 @@ dialog {
 
     .memes-grid {
         grid-template-columns: 1fr;
+    }
+}
+
+/* Дополнительный медиа-запрос для очень маленьких экранов */
+@media (max-width: 480px) {
+    .practices-grid {
+        gap: 15px;
+        padding: 0 5px;
+    }
+    
+    .practice-content {
+        padding: 12px;
+    }
+    
+    .practice-title {
+        font-size: 1.1rem;
+    }
+    
+    .practice-desc {
+        font-size: 0.9rem;
+    }
+    
+    .page-title {
+        font-size: 1.4rem;
+        padding: 0 10px;
     }
 }
