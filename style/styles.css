@@ -752,51 +752,7 @@ dialog {
         grid-template-columns: 1fr;
     }
 
-    .profile-photo {
-        width: 120px;
-        height: 120px;
-    }
-
-    .page-title {
-        font-size: 1.6rem;
-    }
-
-    .header {
-        height: 80px;
-        font-size: 1.5rem;
-    }
-
-    .footer {
-        height: 50px;
-        font-size: 0.85rem;
-    }
-
-    .memes-grid {
-        grid-template-columns: 1fr;
-    }
-}
-
-/* ===== АДАПТИВНОСТЬ ===== */
-@media (max-width: 768px) {
-    .nav-list {
-        flex-direction: column;
-        align-items: center;
-        gap: 8px;
-    }
-
-    .skills-container {
-        grid-template-columns: 1fr;
-    }
-
-    .experience-grid {
-        grid-template-columns: 1fr;
-    }
-
-    .products-grid {
-        grid-template-columns: 1fr;
-    }
-
-    /* ДОБАВЬТЕ ЭТО ДЛЯ ПРАКТИК */
+    /* АДАПТИВНОСТЬ ДЛЯ ПРАКТИК */
     .practices-grid {
         grid-template-columns: 1fr;
         gap: 20px;
@@ -868,4 +824,32 @@ dialog {
         font-size: 1.4rem;
         padding: 0 10px;
     }
+    
+    .header {
+        height: 70px;
+        font-size: 1.3rem;
+    }
+    
+    .footer {
+        height: 45px;
+        font-size: 0.8rem;
+    }
+}
+
+/* Стиль для ссылок в карточках товаров */
+.product-card .practice-link {
+    display: inline-block;
+    color: #48cae4;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 8px 0;
+    transition: all 0.3s;
+    margin-top: 10px;
+    border-bottom: 1px solid transparent;
+}
+
+.product-card .practice-link:hover {
+    color: white;
+    border-bottom-color: #48cae4;
+    transform: translateX(4px);
 }
