@@ -775,3 +775,7 @@ dialog {
         grid-template-columns: 1fr;
     }
 }
+    .memes-grid {
+        grid-template-columns: 1fr;
+    }
+}
