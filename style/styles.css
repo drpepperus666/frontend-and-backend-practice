@@ -1,3 +1,4 @@
+/* ===== БАЗОВЫЕ СТИЛИ ===== */
 * {
     margin: 0;
     padding: 0;
@@ -6,28 +7,36 @@
 
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #0a2463; 
-    color: #ffffff; 
+    background-color: #0a2463;
+    color: #ffffff;
     line-height: 1.6;
 }
 
+/* ===== КОНТЕЙНЕР СТРАНИЦЫ ===== */
 .page-container {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 20px;
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-rows: auto auto 1fr auto;
+    grid-template-areas:
+        "header"
+        "nav"
+        "main"
+        "footer";
     min-height: 100vh;
 }
 
+/* ===== ШАПКА ===== */
 .header {
+    grid-area: header;
     width: 100%;
     height: 100px;
     background: url(../images/header-bg.jpg) center/cover no-repeat;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: white; 
+    color: white;
     font-size: 2rem;
     font-weight: bold;
     letter-spacing: 1px;
@@ -40,7 +49,9 @@ body {
     filter: brightness(1.1);
 }
 
+/* ===== НАВИГАЦИЯ ===== */
 .nav {
+    grid-area: nav;
     background-color: rgba(13, 27, 42, 0.8);
     padding: 12px 0;
     border-bottom: 1px solid #1e3a8a;
@@ -56,12 +67,8 @@ body {
     padding: 0;
 }
 
-.nav-item {
-    margin: 0;
-}
-
 .nav-link {
-    color: #a0c4e8; 
+    color: #a0c4e8;
     text-decoration: none;
     padding: 8px 16px;
     border-radius: 6px;
@@ -74,22 +81,37 @@ body {
 .nav-link:hover,
 .nav-link:focus {
     color: white;
-    background-color: #48cae4; 
+    background-color: #48cae4;
     outline: none;
 }
 
+.nav-link--active {
+    color: white;
+    background-color: #48cae4;
+}
+
+/* ===== ОСНОВНОЙ КОНТЕНТ ===== */
 .content {
+    grid-area: main;
     padding: 30px 0;
-    flex: 1;
     background-color: transparent;
 }
 
 .page-title {
     font-size: 2rem;
     margin-bottom: 25px;
-    color: #64b5f6; 
+    color: #64b5f6;
     text-align: center;
 }
+
+.section-title {
+    text-align: center;
+    margin: 30px 0 20px;
+    color: white;
+    font-size: 1.6rem;
+}
+
+/* ===== ГЛАВНАЯ СТРАНИЦА ===== */
 .profile-header {
     text-align: center;
     margin-bottom: 30px;
@@ -124,6 +146,16 @@ body {
     font-weight: 500;
 }
 
+/* ===== СЕКЦИИ КОНТЕНТА ===== */
+.about-me,
+.practices-section,
+.news-section,
+.memes-section,
+.contact-section,
+.products-section {
+    margin-bottom: 40px;
+}
+
 .about-me p {
     font-size: 1.1rem;
     margin-bottom: 20px;
@@ -140,10 +172,10 @@ body {
     text-shadow: 0 0 10px rgba(100, 181, 246, 0.5);
 }
 
+/* ===== НАВЫКИ ===== */
 .skills-container {
-    display: flex;
-    justify-content: center;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     gap: 12px;
     margin: 25px 0;
 }
@@ -158,6 +190,7 @@ body {
     transition: all 0.3s ease;
     cursor: pointer;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    text-align: center;
 }
 
 .skill-tag:hover {
@@ -167,17 +200,20 @@ body {
     box-shadow: 0 5px 15px rgba(72, 202, 228, 0.5);
 }
 
-.section-title {
-    text-align: center;
-    margin: 30px 0 20px;
-    color: white;
-    font-size: 1.6rem;
+/* ===== ОПЫТ РАБОТЫ ===== */
+.experience-section {
+    margin-top: 50px;
+}
+
+.experience-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
 }
 
 .experience-card {
-    background-color: rgba(27, 58, 107, 0.6); 
+    background-color: rgba(27, 58, 107, 0.6);
     padding: 20px;
-    margin-bottom: 15px;
     border-left: 4px solid #48cae4;
     border-radius: 0 8px 8px 0;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.4);
@@ -202,9 +238,15 @@ body {
     text-shadow: 0 0 10px rgba(72, 202, 228, 0.6);
 }
 
+.experience-desc {
+    color: #e0f0ff;
+    line-height: 1.6;
+}
+
+/* ===== НОВОСТИ ===== */
 .news-item {
     background-color: rgba(27, 58, 107, 0.6);
-    padding: 20px;
+    padding: 25px;
     margin-bottom: 25px;
     border-radius: 12px;
     border: 1px solid rgba(72, 202, 228, 0.3);
@@ -221,6 +263,7 @@ body {
 .news-title {
     color: #64b5f6;
     margin-bottom: 10px;
+    font-size: 1.4rem;
     transition: color 0.3s, transform 0.3s;
 }
 
@@ -236,6 +279,25 @@ body {
     font-size: 0.95rem;
 }
 
+.news-text {
+    color: #e0f0ff;
+    line-height: 1.7;
+}
+
+/* Новости по важности */
+.news-item--important {
+    border-left: 6px solid #7FFFD4;
+}
+
+.news-item--medium {
+    border-left: 6px solid #B0C4DE;
+}
+
+.news-item--unimportant {
+    border-left: 6px solid #1E90FF;
+}
+
+/* ===== ТОВАРЫ ===== */
 .products-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
@@ -245,7 +307,7 @@ body {
 
 .product-card {
     background-color: rgba(27, 58, 107, 0.6);
-    padding: 15px;
+    padding: 20px;
     text-align: center;
     border-radius: 12px;
     border: 1px solid rgba(72, 202, 228, 0.3);
@@ -291,25 +353,39 @@ body {
 .product-price {
     font-size: 1.15rem;
     font-weight: bold;
-    color: white; 
+    color: white;
 }
 
+/* ===== КОНТАКТЫ ===== */
 .contact-info {
-    text-align: center;
+    display: grid;
+    gap: 20px;
     max-width: 600px;
     margin: 0 auto;
 }
 
-.contact-info p {
-    margin: 15px 0;
-    font-size: 1.1rem;
-    color: #e0f0ff;
-    transition: color 0.3s;
+.contact-item {
+    background-color: rgba(27, 58, 107, 0.6);
+    padding: 20px;
+    border-radius: 10px;
+    border-left: 4px solid #48cae4;
+    text-align: center;
 }
 
-.contact-info p:hover {
-    color: #ffffff;
-    text-shadow: 0 0 10px rgba(100, 181, 246, 0.5);
+.contact-label {
+    color: #64b5f6;
+    font-size: 1.1rem;
+    margin-bottom: 8px;
+}
+
+.contact-value {
+    color: #e0f0ff;
+    font-size: 1rem;
+}
+
+.contact-actions {
+    text-align: center;
+    margin-top: 20px;
 }
 
 .call-button {
@@ -320,11 +396,8 @@ body {
     text-decoration: none;
     border-radius: 30px;
     font-weight: bold;
-    margin-top: 10px;
     transition: all 0.3s ease;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
-    position: relative;
-    overflow: hidden;
     font-weight: 700;
 }
 
@@ -334,24 +407,7 @@ body {
     background: linear-gradient(135deg, #64b5f6, #48cae4);
 }
 
-.footer {
-    width: 100%;
-    height: 60px;
-    background: url(../images/footer-bg.jpg) center/cover no-repeat;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    color: white; 
-    font-size: 0.95rem;
-    letter-spacing: 0.5px;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
-    transition: filter 0.3s;
-}
-
-.footer:hover {
-    filter: brightness(1.1);
-}
-
+/* ===== ПРАКТИКИ ===== */
 .practices-list {
     list-style: none;
     padding: 0;
@@ -362,7 +418,7 @@ body {
     gap: 12px;
 }
 
-.practices-list li {
+.practice-item {
     background: rgba(27, 58, 107, 0.6);
     padding: 14px 20px;
     border-radius: 10px;
@@ -370,14 +426,11 @@ body {
     color: #e0f0ff;
     font-size: 1.1rem;
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s;
 }
 
-.memes-title {
-    text-align: center;
-    margin: 40px 0 25px;
-    color: #64b5f6;
-    font-size: 1.8rem;
-    font-weight: 600;
+.practice-item:hover {
+    transform: translateX(5px);
 }
 
 .memes-grid {
@@ -400,11 +453,44 @@ body {
     transform: scale(1.02);
 }
 
-@media (max-width: 600px) {
+/* ===== ФУТЕР ===== */
+.footer {
+    grid-area: footer;
+    width: 100%;
+    height: 60px;
+    background: url(../images/footer-bg.jpg) center/cover no-repeat;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 0.95rem;
+    letter-spacing: 0.5px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.6);
+    transition: filter 0.3s;
+}
+
+.footer:hover {
+    filter: brightness(1.1);
+}
+
+/* ===== АДАПТИВНОСТЬ ===== */
+@media (max-width: 768px) {
     .nav-list {
         flex-direction: column;
         align-items: center;
         gap: 8px;
+    }
+
+    .skills-container {
+        grid-template-columns: 1fr;
+    }
+
+    .experience-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .products-grid {
+        grid-template-columns: 1fr;
     }
 
     .profile-photo {
@@ -424,5 +510,9 @@ body {
     .footer {
         height: 50px;
         font-size: 0.85rem;
+    }
+
+    .memes-grid {
+        grid-template-columns: 1fr;
     }
 }

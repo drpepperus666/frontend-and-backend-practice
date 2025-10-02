@@ -3,12 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Контакты</title>
+    <title>Контакты - Портфолио</title>
     <link rel="stylesheet" href="../style/styles.css">
 </head>
 <body>
     <div class="page-container">
-        <header class="header">Портфолио</header>
+        <header class="header">
+            <h1>Портфолио</h1>
+        </header>
 
         <nav class="nav">
             <ul class="nav-list">
@@ -23,14 +25,31 @@
         <main class="content">
             <h1 class="page-title">Контакты</h1>
 
-            <div class="contact-info">
-                <p><strong>Email:</strong> 666@gmail.com</p>
-                <p><strong>Адрес:</strong> г. Аноним, ул. Анонимная, д. 66</p>
-                <a href="tel:+79991234567" class="call-button">Позвоните мне</a>
-            </div>
+            <section class="contact-info">
+                <div class="contact-item">
+                    <h2 class="contact-label">Электронная почта</h2>
+                    <p class="contact-value">Адрес электронной почты: 666@gmail.com</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h2 class="contact-label">Физический адрес</h2>
+                    <p class="contact-value">Адрес: г. Аноним, ул. Анонимная, д. 66</p>
+                </div>
+                
+                <div class="contact-item">
+                    <h2 class="contact-label">Телефон</h2>
+                    <p class="contact-value">+7 (999) 123-45-67</p>
+                </div>
+
+                <div class="contact-actions">
+                    <a href="tel:+79991234567" class="call-button">Позвонить</a>
+                </div>
+            </section>
         </main>
 
-        <footer class="footer">© 2025 Портфолио. Все права защищены.</footer>
+        <footer class="footer">
+            <p>© 2025 Портфолио. Все права защищены.</p>
+        </footer>
     </div>
 </body>
 </html>

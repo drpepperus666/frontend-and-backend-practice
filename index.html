@@ -3,16 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Семестровая работа</title>
+    <title>Главная - Портфолио</title>
     <link rel="stylesheet" href="style/styles.css">
 </head>
 <body>
     <div class="page-container">
-        <header class="header">Портфолио</header>
+        <header class="header">
+            <h1>Портфолио</h1>
+        </header>
 
         <nav class="nav">
             <ul class="nav-list">
-                <li class="nav-item"><a class="nav-link" href="index.html">⚜ Главная ⚜</a></li>
+                <li class="nav-item"><a class="nav-link nav-link--active" href="index.html">⚜ Главная ⚜</a></li>
                 <li class="nav-item"><a class="nav-link" href="pages/news.html">☽︎ Новости ☾︎</a></li>
                 <li class="nav-item"><a class="nav-link" href="pages/practices.html">✮︎ Практики ✮︎</a></li>
                 <li class="nav-item"><a class="nav-link" href="pages/goods.html">♔︎ Товары ♔︎</a></li>
@@ -21,42 +23,50 @@
         </nav>
 
         <main class="content">
-            <div class="profile-header">
+            <article class="profile-header">
                 <h1 class="profile-title">Информация об авторе</h1>
-                <img class="profile-photo" src="images/photo.png" alt="Фото автора">
+                <img class="profile-photo" src="images/photo.png" alt="Фото Анастасии Шаломеенко">
                 <h2 class="profile-name">Шаломеенко Анастасия Андреевна</h2>
                 <p class="profile-group">ЭФБО-04-24</p>
-            </div>
+            </article>
 
-            <div class="about-me">
-                <p><strong>Обо мне:</strong> Я родилась в Москве. Заработала 100 баллов ЕГЭ по русскому и поступила на бюджет в технологический университет с помощью призерства во всош олимпиаде по литературе.</p>
-            </div>
+            <section class="about-me">
+                <h2 class="section-title">Обо мне</h2>
+                <p class="about-me-text">Я родилась в Москве. Заработала 100 баллов ЕГЭ по русскому и поступила на бюджет в технологический университет с помощью призерства во всош олимпиаде по литературе.</p>
+            </section>
 
-            <div class="skills-container">
-                <div class="skill-tag">HTML</div>
-                <div class="skill-tag">CSS</div>
-                <div class="skill-tag">JavaScript</div>
-                <div class="skill-tag">Мастер по распитию энергетиков</div>
-            </div>
+            <section class="skills-section">
+                <h2 class="section-title">Мои навыки</h2>
+                <div class="skills-container">
+                    <div class="skill-tag">HTML</div>
+                    <div class="skill-tag">CSS</div>
+                    <div class="skill-tag">JavaScript</div>
+                    <div class="skill-tag">Мастер по распитию энергетиков</div>
+                </div>
+            </section>
 
-            <div class="experience-section">
+            <section class="experience-section">
                 <h2 class="section-title">Мой опыт работы</h2>
-                <div class="experience-card">
-                    <h3 class="experience-title">Опыт 1</h3>
-                    <p class="experience-desc">Работала никем. Успех.</p>
+                <div class="experience-grid">
+                    <article class="experience-card">
+                        <h3 class="experience-title">Опыт 1</h3>
+                        <p class="experience-desc">Работала никем. Успех.</p>
+                    </article>
+                    <article class="experience-card">
+                        <h3 class="experience-title">Опыт 2</h3>
+                        <p class="experience-desc">Делала ничего. Достижение.</p>
+                    </article>
+                    <article class="experience-card">
+                        <h3 class="experience-title">Опыт 3</h3>
+                        <p class="experience-desc">Занималась ничем. Победа.</p>
+                    </article>
                 </div>
-                <div class="experience-card">
-                    <h3 class="experience-title">Опыт 2</h3>
-                    <p class="experience-desc">Делала ничего. Достижение.</p>
-                </div>
-                <div class="experience-card">
-                    <h3 class="experience-title">Опыт 3</h3>
-                    <p class="experience-desc">Занималась ничем. Победа.</p>
-                </div>
-            </div>
+            </section>
         </main>
 
-        <footer class="footer">© 2025 Портфолио. Все права защищены.</footer>
+        <footer class="footer">
+            <p>© 2025 Портфолио. Все права защищены.</p>
+        </footer>
     </div>
 </body>
 </html>
